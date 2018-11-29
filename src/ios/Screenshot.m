@@ -34,7 +34,7 @@ CGFloat statusBarHeight()
 	// cut the status bar from the screenshot
 	CGRect smallRect = CGRectMake (0,statusBarHeight()*img.scale,rect.size.width*img.scale,rect.size.height*img.scale);
  
-	CGImageRef subImageRef = CGImageCreateWithImageInRect(img.CGImage, smallRect);
+	CGRect smallRect = CGRectMake (0,rect.origin.y*img.scale,rect.size.width*img.scale,rect.size.height*img.scale);
 	CGRect smallBounds = CGRectMake(0,0,CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
 
 	UIGraphicsBeginImageContext(smallBounds.size);
